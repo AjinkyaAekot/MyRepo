@@ -1,0 +1,23 @@
+<template> 
+    <template if:false={isComponentVisible}>   
+        <template if:true={isCardVisible}>   
+            <lightning-card  title="Resignation">
+                <lightning-record-form
+                    record-id={recordId}
+                    object-api-name="Resignation__c"
+                    columns="2"
+                    mode="edit"
+                    density="comfy"
+                    fields={fields}>
+                </lightning-record-form>  
+            </lightning-card> 
+        </template>
+        <template if:false={isCardVisible}>
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-col">
+                    <lightning-button class="slds-button slds-button_outline-brand" style="display: grid; width: 100%" label="Resignation" title="Resignation" onclick={handleClick}></lightning-button>
+                </div>
+            </div>
+        </template> 
+    </template>   
+</template>
